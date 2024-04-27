@@ -10,15 +10,34 @@ class UserController extends Controller
 {
    
 
-    // public function stats() 
-    // {
-    //     $totalcategories = Category::count();
-    //     $totalannonces = Annonce::count();
-    //     $totalusers = User::count();
-    //     return view('admin.allannonces', compact('totalcategories','totalannonces','totalusers'));
-    // }
+    public function index()
+{
+    $users = User::all();
+
+    return view('admin.users', compact('users'));
+}
+public function update($userId)
+{
+$user = User::find($userId);
+
+if ($user && $user->role !== 'admin') {
+    if ($user->is_banned) {
+        $user->is_banned = false;
+        $user->restore(); 
+        $user->annonce()->restore();
+    } else {
+        // Ban the user
+        $user->is_banned = true;
+        $user->delete(); 
+        $user->annonce()->delete();
+    }
+}
+
+return back();
+}
 
 
+     
   
 
     public function statistics()
@@ -32,8 +51,6 @@ class UserController extends Controller
         return view('admin.statistique', compact('usersCount','advertisersCount', 'totalAnnonce','totalcategories'));
     }
 }
-
-
 
 
 

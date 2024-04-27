@@ -20,13 +20,11 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -93,10 +91,6 @@ Route::get('/admin/test' , function()
 
 
 Route::get('/annonces', [AnnonceController::class, 'viewAll'])->name('admin.annonces');
-Route::get('/Users', [UserController::class, 'viewUsers'])->name('users');
-Route::get('/users/search', [UserController::class, 'searchUsers'])->name('users.search');
-Route::put('/ban/user/{userId}',  [UserController::class, 'banUser'])->name('ban.user');
-Route::put('/Unban/user/{userId}',  [UserController::class, 'unbanUser'])->name('unban.user');
 Route::get('/statistique', [UserController::class, 'statistics'])->name('statistique');
 // Route::get('/Allannonces', [AnnonceController::class, 'adStats'])->name('adstats');
 Route::get('/Allannonces', [AnnonceController::class, 'viewAll'])->name('viewAll');
@@ -109,3 +103,6 @@ Route::post('/create', [AnnonceController::class, 'create'])->name('addAnnonce')
 Route::put('/annonce/{id}', [AnnonceController::class, 'create'])->name('annonces.update');
 
 // });
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/user/{id}', [UserController::class, 'update'])->name('users.update');
