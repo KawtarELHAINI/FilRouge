@@ -251,26 +251,14 @@
         
             <div
                 class="relative flex flex-col shadow-md rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 max-w-sm">
-                <div
-                    class="bg-yellow-600  font-bold text-white text-xs h-12 w-12 rounded-full text-white absolute z-30 top-0 left-2 mt-2 mr-3 flex flex-col justify-center items-center">
-                        <span class="text-sm">date
-                        </span>
-                    <span class="text-xs font-medium uppercase">date22</span>
-                </div>
+               
                 <div
                     class="hover:text-blue-600 text-white text-sm absolute z-30 top-0 right-0 mt-2 mr-3 gap-1 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                         fill="currentColor">
-                        <path
-                            d="M12 3c-3.148 0-6 2.553-6 5.702 0 3.148 2.602 6.907 6 12.298 3.398-5.391 6-9.15 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm10.881-2.501c0-1.492-.739-2.83-1.902-3.748l.741-.752c1.395 1.101 2.28 2.706 2.28 4.5s-.885 3.4-2.28 4.501l-.741-.753c1.163-.917 1.902-2.256 1.902-3.748zm-3.381 2.249l.74.751c.931-.733 1.521-1.804 1.521-3 0-1.195-.59-2.267-1.521-3l-.74.751c.697.551 1.141 1.354 1.141 2.249s-.444 1.699-1.141 2.249zm-16.479 1.499l-.741.753c-1.395-1.101-2.28-2.707-2.28-4.501s.885-3.399 2.28-4.5l.741.752c-1.163.918-1.902 2.256-1.902 3.748s.739 2.831 1.902 3.748zm.338-3.748c0-.896.443-1.698 1.141-2.249l-.74-.751c-.931.733-1.521 1.805-1.521 3 0 1.196.59 2.267 1.521 3l.74-.751c-.697-.55-1.141-1.353-1.141-2.249z"/>
-                    </svg>
-                    <span class="font-semibold">
-                    venue
-                    </span>
+                  
                 </div>
                 <div class="h-auto overflow-hidden">
                     <div class="h-44 overflow-hidden relative">
-                        <img src="" alt="">
+                        <img src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
                     </div>
                 </div>
                 <div class="bg-white py-4 px-3">
