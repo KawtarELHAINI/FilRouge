@@ -9,18 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AnnonceController extends Controller
 {
-    // public function viewClient()
-    // {
-    //     $user = Auth::id();
-    //     $categories = Category::all();
-    //     $annonces = Annonce::where('user_id', $user)
-    //         ->orderby('created_at', 'desc')
-    //         ->get();
-    //     $annonces = Annonce::all();
-    //     // dd($annonce);
-    //     return view('home', compact('annonces'));
-
-    // }
+   
 
     public function viewClient(Request $request)
     {
@@ -47,18 +36,6 @@ class AnnonceController extends Controller
         return view('home', compact('annonces', 'categories'));
     }
     
-
-
-
-    // public function viewAll()
-    // {
-    //     $user = Auth::id();
-    //     $categories = Category::all();
-    //     $annonces = Annonce::orderby('created_at', 'desc')
-    //         ->paginate(9);
-    //     return view('admin.allannonces', compact('annonces'), compact('categories'));
-    // }
-
     public function viewAll(Request $request)
     {
         $user = Auth::id();
@@ -72,9 +49,6 @@ class AnnonceController extends Controller
         $annonces = $annoncesQuery->paginate(9);
 
 
-        // if ($request->ajax()) {
-        //     return view('admin.allannonces', compact('annonces'));
-        // }
     
         return view('admin.allannonces', compact('annonces','totalAnnonce','categories'));
     }
@@ -87,7 +61,7 @@ class AnnonceController extends Controller
         if(auth()->user()->role === 'admin'){
           return redirect()->route('viewAll');  
         }else{
-        return redirect()->route('landlord.dashboard');
+        return redirect()->route('dashboard');
     
         }
         
