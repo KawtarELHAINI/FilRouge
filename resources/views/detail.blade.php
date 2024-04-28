@@ -21,30 +21,17 @@
   }
   ```
 -->
-<div class="bg-white">
+<div class="bg-black">
     <div class="pt-6">
       <nav aria-label="Breadcrumb">
         <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <li>
             <div class="flex items-center">
-              <a href="#" class="mr-2 text-sm font-medium text-gray-900">{{ $annonce->title}}</a>
-              <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
-                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-              </svg>
+              <a href="#" class="mr-2 text-sm font-medium text-white">{{ $annonce->title}}</a>
+           
             </div>
           </li>
-          {{-- <li>
-            <div class="flex items-center">
-              <a href="#" class="mr-2 text-sm font-medium text-gray-900">Clothing</a>
-              <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true" class="h-5 w-4 text-gray-300">
-                <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-              </svg>
-            </div>
-          </li> --}}
-  
-          {{-- <li class="text-sm">
-            <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Basic Tee 6-Pack</a>
-          </li> --}}
+        
         </ol>
       </nav>
   
@@ -71,42 +58,17 @@
       <!-- This is an example component -->
 <div class="max-w-2xl mx-auto mt-20">
 
-	<div id="default-carousel" class="relative" data-carousel="static">
+	<div>
         <!-- Carousel wrapper -->
         <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
             <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+            <div  data-carousel-item>
+                <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-white">First Slide</span>
                 <img src="{{asset('images/' . $annonce->image) }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
             </div>
-            <!-- Item 2 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('images/' . $annonce->image) }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-            </div>
-            <!-- Item 3 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('images/' . $annonce->image) }}" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-            </div>
+            
         </div>
-        <!-- Slider indicators -->
-        <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-        </div>
-        <!-- Slider controls -->
-        <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
-            <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                <span class="hidden">Previous</span>
-            </span>
-        </button>
-        <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
-            <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                <span class="hidden">Next</span>
-            </span>
-        </button>
+       
     </div>
 
 	
@@ -117,14 +79,14 @@
   
       <!-- Product info -->
       <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
-        <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-          <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{{ $annonce->title }}</h1>
+        <div class="lg:col-span-2 lg:border-r lg:border-white lg:pr-8">
+          <h1 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">{{ $annonce->title }}</h1>
         </div>
   
         <!-- Options -->
         <div class="mt-4 lg:row-span-3 lg:mt-0">
           <h2 class="sr-only">Product information</h2>
-          <p class="text-3xl tracking-tight text-gray-900"> {{ $annonce->price }} MAD night</p>
+          <p class="text-3xl tracking-tight text-white"> {{ $annonce->price }} MAD day</p>
   
           <!-- Reviews -->
           {{-- <div class="mt-6">
@@ -156,7 +118,7 @@
           <form class="mt-10">
             <!-- Colors -->
             <div>
-              <h2 class="text-xl font-medium text-gray-900 pb-5"></h2>
+              <h2 class="text-xl font-medium text-white pb-5"></h2>
   
               {{-- <fieldset class="mt-4">
                 <legend class="sr-only">Choose a color</legend>
@@ -293,9 +255,10 @@
             <h3 class="text-sm font-medium text-gray-600 col-span-5">{{ $annonce->user->email }}</h3>
             
         </div>
-        
-            <button type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Contact hosted</button>
-          </form>
+        <button    type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-yellow-600 px-8 py-3 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2">Reserve</button>
+       <a href=""><button    type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-yellow-600 px-8 py-3 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2">Go back</button></a> 
+
+      </form>
         </div>
   
         <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
@@ -309,33 +272,29 @@
           </div>
   
           <div class="mt-10">
-            <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
+            <h3 class="text-sm font-medium text-white">Highlights</h3>
   
             <div class="mt-4">
               <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
-                <li class="text-gray-400"><span class="text-gray-600">Hand cut and sewn locally</span></li>
-                <li class="text-gray-400"><span class="text-gray-600">Dyed with our proprietary colors</span></li>
-                <li class="text-gray-400"><span class="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
-                <li class="text-gray-400"><span class="text-gray-600">Ultra-soft 100% cotton</span></li>
+                <li class="text-white"><span class="text-white">Hand cut and sewn locally</span></li>
+                <li class="text-white"><span class="text-white">Dyed with our proprietary colors</span></li>
+                <li class="text-white"><span class="text-white">Pre-washed &amp; pre-shrunk</span></li>
+                <li class="text-white"><span class="text-white">Ultra-soft 100% cotton</span></li>
               </ul>
             </div>
           </div>
   
           <div class="mt-10">
-            <h2 class="text-sm font-medium text-gray-900">Details</h2>
+            <h2 class="text-sm font-medium text-white">Details</h2>
   
             <div class="mt-4 space-y-6">
-              <p class="text-sm text-gray-600">{{ $annonce->description }}</p>
+              <p class="text-sm text-white">{{ $annonce->description }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
-  
 
 
 

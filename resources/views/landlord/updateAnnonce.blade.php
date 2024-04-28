@@ -1,7 +1,9 @@
-@include('partials.sidebar')
+@include('partials.navbar')
 
-<body class="bg-gradient-to-r from-violet-100 to-blue-200">
+<body class="bg-gradient-to-r from-yellow-500 to-yellow-800">
 
+<section class="max-w-4xl p-6 mx-auto bg-black rounded-md shadow-md dark:bg-gray-800 mt-20">
+    <h1 class="text-xl font-bold text-white capitalize dark:text-white">Update Annonce</h1>
 
     {{-- <h1 class="ml-72 mt-20 text-2xl text-gray-900 dark:text-white">Update -></h1> --}}
 
@@ -10,21 +12,21 @@
     @method('PUT')
 
     <div class="form-group">
-        <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+        <label for="title" class="block mb-2 text-sm font-medium text-white dark:text-white">Title</label>
         <input type="text" name="title" id="title" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ $annonce->title }}" required>
     </div>
 
     <div class="form-group">
-        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+        <label for="description" class="block mb-2 text-sm font-medium text-white dark:text-white">Description</label>
         <textarea name="description" id="description" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required>{{ $annonce->description }}</textarea>
     </div>
     <div class="form-group">
-        <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+        <label for="price" class="block mb-2 text-sm font-medium text-white dark:text-white">Price</label>
         <input type="number" name="price" id="price" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ $annonce->price }}" required>
     </div>
 
     <div class="form-group">
-        <label for="categories_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+        <label for="categories_id" class="block mb-2 text-sm font-medium text-white dark:text-white">Category</label>
         <select name="categories_id" id="categories_id" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
             @foreach($categories as $category)
                 <option value="{{ $category->id }}" {{ $annonce->categories_id == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
@@ -33,10 +35,10 @@
     </div>
 
     <div class="form-group">
-        <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
+        <label for="image" class="block mb-2 text-sm font-medium text-white dark:text-white">Image</label>
         <input type="file" name="image" id="image" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
     </div>
 
-    <button type="submit" class="mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
+    <button type="submit" class="mt-10 text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
 </form>
 </body>
