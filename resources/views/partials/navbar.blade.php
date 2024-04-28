@@ -1,11 +1,11 @@
 @extends('layout')
 
-<header class="bg-white">
+<header class="bg-black">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
         <a href="" class="-m-1.5 p-1.5">
           <span class="sr-only">Your Company</span>
-          <img class="h-12 w-auto" src="" alt="">
+          <img class="h-12 w-auto" src="{{ asset('images/logo.png') }}" alt="">
         </a>
       </div>
       <div class="flex lg:hidden">
@@ -38,9 +38,9 @@
        
         </div>
         {{-- {{route('home')}} --}} 
-        <a href="" class="text-sm font-semibold leading-6 text-gray-900">home</a>
-        <a href="" class="text-sm font-semibold leading-6 text-gray-900">about us</a>
-         <a href="" class="text-sm font-semibold leading-6 text-gray-900">company</a>
+        <a href="{{route('home')}}" class="text-sm font-semibold leading-6 text-yellow-900">home</a>
+        <a href="" class="text-sm font-semibold leading-6 text-yellow-900">about us</a>
+         <a href="" class="text-sm font-semibold leading-6 text-yellow-900">company</a>
       </div>
       
       
@@ -48,20 +48,14 @@
 
 
        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a href=""  >
-        <div class="mr-5">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path opacity=".55" fill="#263238" d="M19.005 3.175H4.674C3.642 3.175 3 3.789 3 4.821V21.02l3.544-3.514h12.461c1.033 0 2.064-1.06 2.064-2.093V4.821c-.001-1.032-1.032-1.646-2.064-1.646zm-4.989 9.869H7.041V11.1h6.975v1.944zm3-4H7.041V7.1h9.975v1.944z"></path></svg>
-        </a>
+      
        </div>
-        <a href="" class="text-sm font-semibold leading-6 text-gray-900">Log out <span aria-hidden="true">&rarr;</span></a>
       </div>
      
-     @else
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         
-        <a href="" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">log in</a>
+        <a href="" class="rounded-md bg-red-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">log out</a>
     </div>
-     @endif
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
     {{-- <div class="lg:hidden" role="dialog" aria-modal="true">

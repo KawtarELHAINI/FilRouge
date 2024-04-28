@@ -1,8 +1,6 @@
-@include('partials.navbar')
-<body class="bg-gradient-to-r from-yellow-500 to-yellow-800">
-  
-<section class="max-w-4xl p-6 mx-auto bg-black rounded-md shadow-md dark:bg-gray-800 mt-20">
-    <h1 class="text-xl font-bold text-white capitalize dark:text-white">Add Annonce</h1>
+<!-- component -->
+<section class="max-w-4xl p-6 mx-auto bg-indigo-600 rounded-md shadow-md dark:bg-gray-800 mt-20">
+    <h1 class="text-xl font-bold text-white capitalize dark:text-white">Account settings</h1>
     <form   method="POST" action="{{route('addAnnonce')}}" enctype="multipart/form-data">
     @csrf
 
