@@ -120,7 +120,7 @@
     </div> --}}
   </header>
           <div x-show="open" x-transition:enter="duration-150 ease-out" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="duration-100 ease-in" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" x-description="Mobile menu, show/hide based on menu open state." class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden" x-ref="panel" @click.away="open = false">
-            <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div class="rounded-lg shadow-md bg-black ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div class="px-5 pt-4 flex items-center justify-between">
                 <div>
                   <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
@@ -192,7 +192,7 @@
               <rect x="118" width="404" height="784" fill="url(#4f4f415c-a0e9-44c2-9601-6ded5a34a13e)"></rect>
             </svg>
             <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
-              <button type="button" class="relative block w-full bg-white rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <button type="button" class="relative block w-full bg-black rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 <span class="sr-only">Watch our video to learn more</span>
                 <img class="w-full" src="./images/carbg.webp" alt="">
                 <div class="absolute inset-0 w-full h-full flex items-center justify-center" aria-hidden="true">
@@ -215,7 +215,7 @@
                             <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDJ8fGNhcnxlbnwwfHx8fDE2MzE2NzIwOTU&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=1000&h=650&fit=crop" width="1000" alt="..." height="650">
                         </div>
                         <div class="py-4 w-full lg:w-6/12">
-                            <div class="bg-white lg:-ml-12 lg:pl-12 lg:py-12">
+                            <div class="bg-black lg:-ml-12 lg:pl-12 lg:py-12">
                                 <h2 class="mb-2 text-blue-500 text-xl">Rental Cars &amp; Much More</h2>
                                 <h3 class="capitalize font-bold mb-4 text-4xl text-gray-900 xl:text-5xl">Experience a Rental service like never before</h3>
                                 <div class="bg-blue-500 mb-6 pb-1 w-2/12"></div>

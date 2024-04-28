@@ -101,7 +101,6 @@ class AnnonceController extends Controller
             $request->validate([
                 'title' => ['required', 'string', 'max:255'],
                 'description' => ['required', 'string'],
-                'location' => ['required', 'string', 'max:255'],
                 'price' => ['required', 'numeric'], 
                 'image' => ['required', 'file'], 
             ]);
@@ -120,7 +119,6 @@ class AnnonceController extends Controller
                 'title' => $request->title,
                 'description' => $request->description,
                 'image' => $imageName, 
-                'location' =>  $request->location,
                 'type' => $request->type,
                 'price' => $request->price,
                 'user_id' => $user->id,
@@ -171,7 +169,6 @@ public function EditAnnoce($id) {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
-            'location' => ['required', 'string', 'max:255'],
             'price' => ['required', 'numeric'],
             'image' => ['nullable', 'file'], 
         ]);
@@ -194,7 +191,6 @@ public function EditAnnoce($id) {
         $annonce->update([
             'title' => $request->title,
             'description' => $request->description,
-            'location' => $request->location,
             'type' => $request->type,
             'price' => $request->price,
             'categories_id' => $request->categories_id,

@@ -35,7 +35,7 @@ class LoginController extends Controller
             if ($user->role === 'client') {
                 return redirect('/welcome');
             } elseif ($user->role === 'renter') {
-                return redirect('/landlord.dashboard');
+                return redirect('/create');
             } elseif ($user->role === 'admin') {
                 return redirect('/admin/statistiques');
             } else {

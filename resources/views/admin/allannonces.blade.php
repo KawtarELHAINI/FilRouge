@@ -105,11 +105,7 @@
                          {{$annonce->price}}
                         </p>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <p class="text-m text-nowrap text-ellipsis	overflow-hidden mb-2 text-gray-400">
-                         {{$annonce->status}}
-                        </p>
-                    </div>
+                   
                 </div>
             </div>
 
