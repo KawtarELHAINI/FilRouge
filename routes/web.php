@@ -40,13 +40,13 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 // Route::resource('categories', CategoryController::class);
 
 
-Route::get('/Categories', [CategoryController::class, 'view'])->name('categories');
-Route::post('/Categories', [CategoryController::class, 'create'])->name('addCategorie');
-Route::delete('/Categories/{category}', [CategoryController::class, 'delete'])->name('deleteCategorie');
-//still not working
-Route::put('/Categorie', [CategoryController::class, 'update'])->name('updateCategorie');
+// Route::get('/Categories', [CategoryController::class, 'view'])->name('categories');
+// Route::post('/Categories', [CategoryController::class, 'create'])->name('addCategorie');
+// Route::delete('/Categories/{category}', [CategoryController::class, 'delete'])->name('deleteCategorie');
+// //still not working
+// Route::put('/Categorie', [CategoryController::class, 'update'])->name('updateCategorie');
 
-// Route::prefix('admin')->group(function () {
+// // Route::prefix('admin')->group(function () {
 //     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 //     Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 //     Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
@@ -90,20 +90,58 @@ Route::get('/admin/test' , function()
 
 
 
-Route::get('/annonces', [AnnonceController::class, 'viewAll'])->name('admin.annonces');
-Route::get('/statistique', [UserController::class, 'statistics'])->name('statistique');
-// Route::get('/Allannonces', [AnnonceController::class, 'adStats'])->name('adstats');
-Route::get('/Allannonces', [AnnonceController::class, 'viewAll'])->name('viewAll');
-Route::delete('/Allannonces/{annonce}', [AnnonceController::class, 'delete'])->name('deleteAd');
-// });
-    Route::get('/Users', [UserController::class, 'viewUsers'])->name('users');
-    Route::get('/users/search', [UserController::class, 'searchUsers'])->name('users.search');
-    Route::put('/ban/user/{userId}',  [UserController::class, 'banUser'])->name('ban.user');
-    Route::put('/Unban/user/{userId}',  [UserController::class, 'unbanUser'])->name('unban.user');
-// Route::middleware('auth', 'advertiser')->group(function () {
-Route::get('/dashboard', [AnnonceController::class, 'viewlandlord'])->name('landlord.dashboard');
-Route::post('/create', [AnnonceController::class, 'create'])->name('addAnnonce');
-Route::put('/annonce/{id}', [AnnonceController::class, 'create'])->name('annonces.update');
+// Route::get('/annonces', [AnnonceController::class, 'viewAll'])->name('admin.annonces');
+// Route::get('/statistique', [UserController::class, 'statistics'])->name('statistique');
+// // Route::get('/Allannonces', [AnnonceController::class, 'adStats'])->name('adstats');
+// Route::get('/Allannonces', [AnnonceController::class, 'viewAll'])->name('viewAll');
+// Route::delete('/Allannonces/{annonce}', [AnnonceController::class, 'delete'])->name('deleteAd');
+// // });
+//     Route::get('/Users', [UserController::class, 'viewUsers'])->name('users');
+//     Route::get('/users/search', [UserController::class, 'searchUsers'])->name('users.search');
+//     Route::put('/ban/user/{userId}',  [UserController::class, 'banUser'])->name('ban.user');
+//     Route::put('/Unban/user/{userId}',  [UserController::class, 'unbanUser'])->name('unban.user');
+// // Route::middleware('auth', 'advertiser')->group(function () {
+// Route::get('/dashboard', [AnnonceController::class, 'viewlandlord'])->name('landlord.dashboard');
+// Route::post('/create', [AnnonceController::class, 'create'])->name('addAnnonce');
+// Route::put('/annonce/{id}', [AnnonceController::class, 'create'])->name('annonces.update');
 
-// });
+// // });
 
+
+
+// Route::post('/dashboard/search', [AnnonceController::class, 'search'])->name('search');
+// Route::get('/annonces', [AnnonceController::class, 'show'])->name('show.annonce');
+
+
+
+// Route::middleware('auth', 'banned')->group(function () {
+
+    Route::get('/home', [AnnonceController::class, 'viewClient'])->name('home');
+    Route::post('/annonce/search', [AnnonceController::class, 'viewClient'])->name('events.search');
+    Route::get('/details/{id}', [AnnonceController::class, 'showDetails'])->name('details');
+
+
+    // Route::middleware('advertiser')->group(function () {
+        Route::get('/dashboard', [AnnonceController::class, 'viewlandlord'])->name('landlord.dashboard');
+        Route::get('/create', [AnnonceController::class, 'createAnnonce'])->name('addAnnonce');
+        Route::post('/create', [AnnonceController::class, 'create'])->name('addAnnonce');
+        Route::get('/annonce/{id}/edit', [AnnonceController::class, 'EditAnnoce'])->name('annonces.edit');
+        Route::put('/annonce/{id}/update', [AnnonceController::class, 'update'])->name('annonces.update');
+
+
+    // Route::middleware('admin')->group(function () {
+        Route::get('/Categories', [CategoryController::class, 'view'])->name('categories');
+        Route::post('/Categories', [CategoryController::class, 'create'])->name('addCategorie');
+        Route::delete('/Categories/{category}', [CategoryController::class, 'delete'])->name('deleteCategorie');
+        //still not working
+        Route::put('/Categorie', [CategoryController::class, 'update'])->name('updateCategorie');
+        Route::get('/annonces', [AnnonceController::class, 'viewAll'])->name('admin.annonces');
+        Route::get('/Users', [UserController::class, 'viewUsers'])->name('users');
+        Route::get('/users/search', [UserController::class, 'searchUsers'])->name('users.search');
+        Route::put('/ban/user/{userId}',  [UserController::class, 'banUser'])->name('ban.user');
+        Route::put('/Unban/user/{userId}',  [UserController::class, 'unbanUser'])->name('unban.user');
+        Route::get('/statistique', [UserController::class, 'statistics'])->name('statistique');
+        // Route::get('/Allannonces', [AnnonceController::class, 'adStats'])->name('adstats');
+        Route::get('/Allannonces', [AnnonceController::class, 'viewAll'])->name('viewAll');
+        Route::delete('/Allannonces/{annonce}', [AnnonceController::class, 'delete'])->name('deleteAd');
+        // Route::get('/annonces', [UserController::class, 'stats'])->name('stats');
