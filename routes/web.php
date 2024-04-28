@@ -96,7 +96,10 @@ Route::get('/statistique', [UserController::class, 'statistics'])->name('statist
 Route::get('/Allannonces', [AnnonceController::class, 'viewAll'])->name('viewAll');
 Route::delete('/Allannonces/{annonce}', [AnnonceController::class, 'delete'])->name('deleteAd');
 // });
-
+    Route::get('/Users', [UserController::class, 'viewUsers'])->name('users');
+    Route::get('/users/search', [UserController::class, 'searchUsers'])->name('users.search');
+    Route::put('/ban/user/{userId}',  [UserController::class, 'banUser'])->name('ban.user');
+    Route::put('/Unban/user/{userId}',  [UserController::class, 'unbanUser'])->name('unban.user');
 // Route::middleware('auth', 'advertiser')->group(function () {
 Route::get('/dashboard', [AnnonceController::class, 'viewlandlord'])->name('landlord.dashboard');
 Route::post('/create', [AnnonceController::class, 'create'])->name('addAnnonce');
@@ -104,5 +107,3 @@ Route::put('/annonce/{id}', [AnnonceController::class, 'create'])->name('annonce
 
 // });
 
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::get('/user/{id}', [UserController::class, 'update'])->name('users.update');
