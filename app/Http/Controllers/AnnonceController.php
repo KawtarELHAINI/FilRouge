@@ -129,6 +129,8 @@ class AnnonceController extends Controller
            
             return redirect()->route('landlord.dashboard');
         } catch (\Exception $e) {
+            dd($e->getMessage());
+
         }
 
         
