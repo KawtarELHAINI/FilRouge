@@ -222,7 +222,7 @@
                                                 <form action="{{ route('ban.user', ['userId' => $user->id]) }}" method="POST">
                                                 @csrf
           @method('PUT')
-          <button type="submit" class="mt-1 text-xs leading-5 text-red-500">Unbanned</button>
+          <button type="submit" class="text-sm text-blue-500 bg-green-500/20 w-fit px-4 py-1 rounded-2xl">unBanned</button>
 
                                                 </form>
                                                 @endif
