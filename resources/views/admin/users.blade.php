@@ -34,7 +34,7 @@
                     </div>
                     <div class="flex flex-col mt-6">
                         <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                            <div class="inline-block py-2 align-middle md:px-6 lg:px-8">
                                 <div class="overflow-hidden border md:rounded-lg">
                                     <table class="min-w-full divide-y divide-teal-700">
                                         <thead class="bg-yellow-800">
@@ -66,18 +66,17 @@
                                  </th>
 
                                 
-                             </tr>                                        </thead>
-                                        <tbody class="bg-white divide-y divide-yellow-200" id="users-container">
-                                        <tr>
-@foreach ($users as $user)
-
-
-@if ($user->banned)
-
-<td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
-                                                <div>        <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="{{ asset($user->image) }}" alt="">
-</div>
-                                            </td>
+                             </tr>        
+                            </thead>
+                            <tbody class="bg-white divide-y divide-yellow-200" id="users-container">
+                                @foreach ($users as $user)
+                                @if ($user->banned)
+        <tr>
+        <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
+        <div>        
+        <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="{{asset('images/' . $user->image) }}" alt="">
+        </div>
+        </td>
         <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">{{$user->firstname}}{{$user->lastname}}</td>
         <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">{{$user->email}}</td>
         <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
@@ -87,8 +86,8 @@
         @if($user->role != 'admin')
 
         <td class="flex  gap-2 px-4 py-4 text-sm whitespace-nowrap text-center">
-                                                <form action="{{ route('unban.user', ['userId' => $user->id]) }}" method="POST">
-                                                @csrf
+        <form action="{{ route('unban.user', ['userId' => $user->id]) }}" method="POST">
+        @csrf
           @method('PUT')
           <button type="submit" class="mt-1 text-xs leading-5 text-red-500">Banned</button>
 

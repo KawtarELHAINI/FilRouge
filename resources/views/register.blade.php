@@ -61,7 +61,7 @@
             <div class="flex mb-6">
                 <div class="w-2/5 pr-2">
                     <label class="block mb-2 text-[#0037AE] " for="image">Your Profile</label>
-                    <input type="file" name="image" accept="image/*" class="block text-sm py-3 px-4 rounded-lg w-full border outline-yellow-500">
+                    <input type="file" name="image" class="block text-sm py-3 px-4 rounded-lg w-full border outline-yellow-500">
                 </div>
                 <div class="w-2/5 px-2">
                     <label class="block mb-2 text-[#0037AE]" for="phone">Phone</label>

@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use App\Repositories\UserRepositoryInterface;
@@ -19,19 +20,25 @@ class RegisterController extends Controller
     public function store(RegisterRequest $request)
     {
         $incomingFields = $request->validated();
-
+        
         $incomingFields['password'] = bcrypt($incomingFields['password']);
-
-        $file_extension = $request->image->getClientOriginalExtension();
-        $file_name = time() . '.' . $file_extension;
-        $path = 'images/users';
-        $request->image->move($path, $file_name);
-
-        $user = $this->userRepository->create($incomingFields);
-
-        if ($incomingFields['role'] === 'client' || $incomingFields['role'] === 'renter' || $incomingFields['role'] === 'admin') {
+        
+        if ($request->hasFile('image')) {
+            $imageFile = $request->file('image');
+    
+            $imageName = time() . '.' . $imageFile->getClientOriginalExtension();
+            // Move the image to the public images directory
+            $imageFile->move(public_path('images'), $imageName);
+    
+            // Store the relative path to the image in the database
+            $incomingFields['image'] = 'images/' . $imageName;
+        }
+    
+        $user = User::create($incomingFields);
+    
+        if (in_array($incomingFields['role'], ['client', 'renter', 'admin'])) {
             return redirect('login');
-        } else {
+        } else { 
             return redirect('/login')->with('error', 'Invalid role');
         }
     }
