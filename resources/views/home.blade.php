@@ -59,7 +59,6 @@
               </a>
             
               <div class="grid grid-cols-1 gap-2">
-              <p class="mb-3 font-normal text-white dark:text-white  rounded drop-shadow-md px-5 py-0.5 ">location :{{ $annonce->location }} </p>
               <p class="mb-3 font-normal text-white dark:text-white  rounded drop-shadow-md px-5 py-0.5 ">Price : {{ $annonce->price }}</p>
               <p class="mb-3 font-normal text-white dark:text-white rounded drop-shadow-md px-5 py-0.5">contact : 0645982736</p>
               <p class="mb-3 font-normal text-white dark:text-white  px-5 py-0.5">April 14</p>

@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,6 +118,8 @@ Route::get('/admin/test' , function()
 // Route::middleware('auth', 'banned')->group(function () {
 
     Route::get('/home', [AnnonceController::class, 'viewClient'])->name('home');
+    // Route::get('/', [AnnonceController::class, 'viewvisiteur'])->name('home1');
+
     Route::post('/annonce/search', [AnnonceController::class, 'viewClient'])->name('events.search');
     Route::get('/details/{id}', [AnnonceController::class, 'showDetails'])->name('details');
 
@@ -145,3 +148,16 @@ Route::get('/admin/test' , function()
         Route::get('/Allannonces', [AnnonceController::class, 'viewAll'])->name('viewAll');
         Route::delete('/Allannonces/{annonce}', [AnnonceController::class, 'delete'])->name('deleteAd');
         // Route::get('/annonces', [UserController::class, 'stats'])->name('stats');
+
+
+
+            Route::post('/annonces/reserve/{annonce}', [ReservationController::class, 'reserve'])->name('annonces.reserve');
+            Route::post('/reservations/ticket/{id}', [ReservationController::class, 'generateTicket'])->name('annonces.ticket');
+            Route::post('/showticket/{event}', [ReservationController::class, 'showTicket'])->name('showticket');
+            
+            
+            
+Route::get('/utilisateur.index' , function()
+{
+    return view('utilisateur.index');
+});
