@@ -39,7 +39,6 @@
                                     <table class="min-w-full divide-y divide-teal-700">
                                         <thead class="bg-yellow-800">
                                         <tr>
-                                 
                                  <th scope="col"
                                      class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-white">
                                      Picture
