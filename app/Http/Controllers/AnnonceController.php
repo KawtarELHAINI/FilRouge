@@ -230,6 +230,9 @@ public function EditAnnoce($id) {
         return redirect()->route('landlord.dashboard');
     }
 
-
+    public function showReserveForm($id) {
+        $annonce = Annonce::findOrFail($id);
+        return view('reserve', compact('annonce'));
+    }
 
 }

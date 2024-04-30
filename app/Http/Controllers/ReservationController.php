@@ -13,44 +13,60 @@ use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
-    public function reserve(Annonce $annonce)
+
+    public function reserve(Request $request, $id)
     {
-        if ($annonce->availablecars > 0) {
-           
-
-            $user = auth()->user();
-            $reservation = $user->reservations()->create([
-                'status' => 0,
-                'annonce_id' => $annonce->id,
-            ]);
-
-            $annonce->decrement('availablecars');
-
-            return redirect()->route('utilisateur.index', $annonce)->with('success', 'car reserved!');
-        } else {
-            return redirect()->route('utilisateur.index')->with('error', 'car is fully booked.');
+        $request->validate([
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after:start_date',
+        ]);
+    
+        $user_id = Auth::user()->id;
+    
+        // $annonce = Annonce::findOrFail($id);
+    
+        // Check if the annonce is available for reservation
+        $existingReservation = Reservation::where('annonce_id', $id)
+            ->where(function ($query) use ($request) {
+                $query->whereBetween('start_date', [$request->start_date, $request->end_date])
+                    ->orWhereBetween('end_date', [$request->start_date, $request->end_date]);
+            })->exists();
+    
+        if ($existingReservation) {
+            return redirect()->back()->with('error', 'This annonce is already reserved for the selected dates.');
         }
+    
+        // Create the reservation
+        Reservation::create([
+            'user_id' => $user_id,
+            'annonce_id' => $id,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+        ]);
+    
+        return redirect()->back()->with('success', 'Reservation created successfully.');
     }
+    
 
 
-    public function generateTicket($id)
-    {
-        $reservation = Reservation::where('user_id', $id)->latest()->first();
+    // public function generateTicket($id)
+    // {
+    //     $reservation = Reservation::where('user_id', $id)->latest()->first();
 
 
         
 
-        return view('tickets.show', compact('reservation'));
-    }
+    //     return view('tickets.show', compact('reservation'));
+    // }
 
 
-    public function showTicket(Reservation $reservation)
-    {
-        // If the reservation doesn't have a ticket, abort with a 404
-        if (!$reservation->ticket) {
-            abort(404);
-        }
+    // public function showTicket(Reservation $reservation)
+    // {
+    //     // If the reservation doesn't have a ticket, abort with a 404
+    //     if (!$reservation->ticket) {
+    //         abort(404);
+    //     }
 
-        return view('tickets.show', compact('reservation'));
-    }
+    //     return view('tickets.show', compact('reservation'));
+    // }
 }

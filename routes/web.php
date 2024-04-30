@@ -148,16 +148,16 @@ Route::get('/admin/test' , function()
         Route::get('/Allannonces', [AnnonceController::class, 'viewAll'])->name('viewAll');
         Route::delete('/Allannonces/{annonce}', [AnnonceController::class, 'delete'])->name('deleteAd');
         // Route::get('/annonces', [UserController::class, 'stats'])->name('stats');
-
-
-
-            Route::post('/annonces/reserve/{annonce}', [ReservationController::class, 'reserve'])->name('annonces.reserve');
-            Route::post('/reservations/ticket/{id}', [ReservationController::class, 'generateTicket'])->name('annonces.ticket');
-            Route::post('/showticket/{event}', [ReservationController::class, 'showTicket'])->name('showticket');
+        Route::get('/annonces/{id}/reserve', [AnnonceController::class, 'showReserveForm'])->name('annonces.reserveForm');
+        Route::post('/annonces/{id}/reserve', [ReservationController::class, 'reserve'])->name('annonces.reserve');
+        
+            // Route::post('/annonces/reserve/{annonce}', [ReservationController::class, 'reserve'])->name('annonces.reserve');
+            // Route::post('/reservations/ticket/{id}', [ReservationController::class, 'generateTicket'])->name('annonces.ticket');
+            // Route::post('/showticket/{event}', [ReservationController::class, 'showTicket'])->name('showticket');
             
             
             
-Route::get('/utilisateur.index' , function()
-{
-    return view('utilisateur.index');
-});
+// Route::get('/utilisateur.index' , function()
+// {
+//     return view('utilisateur.index');
+// });

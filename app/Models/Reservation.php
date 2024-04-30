@@ -10,6 +10,9 @@ class Reservation extends Model
     use HasFactory;
     protected $fillable = [
         'annonce_id',
+        'user_id',
+        'start_date',
+        'end_date',
     ];
     public function annonce()
     {
