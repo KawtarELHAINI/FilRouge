@@ -126,7 +126,7 @@ Route::get('/admin/test' , function()
     Route::get('/details/{id}', [AnnonceController::class, 'showDetails'])->name('details');
 
 
-    // Route::middleware('advertiser')->group(function () {
+    // Route::middleware('client')->group(function () {
         Route::get('/dashboard', [AnnonceController::class, 'viewlandlord'])->name('landlord.dashboard');
         Route::get('/create', [AnnonceController::class, 'createAnnonce'])->name('addAnnonce');
         Route::post('/create', [AnnonceController::class, 'create'])->name('addAnnonce');
@@ -150,7 +150,7 @@ Route::get('/admin/test' , function()
         Route::get('/Allannonces', [AnnonceController::class, 'viewAll'])->name('viewAll');
         Route::delete('/Allannonces/{annonce}', [AnnonceController::class, 'delete'])->name('deleteAd');
         // Route::get('/annonces', [UserController::class, 'stats'])->name('stats');
-        // Route::get('/annonces/{id}/reserve', [AnnonceController::class, 'showReserveForm'])->name('annonces.reserveForm');
+        Route::get('/annonces/{id}/reserve', [AnnonceController::class, 'showReserveForm'])->name('annonces.reserveForm');
         Route::post('/annonces/{id}/reserve', [ReservationController::class, 'reserve'])->name('annonces.reserve');
         
             // Route::post('/annonces/reserve/{annonce}', [ReservationController::class, 'reserve'])->name('annonces.reserve');

@@ -47,18 +47,13 @@ class ReservationController extends Controller
         return redirect()->back()->with('success', 'Reservation created successfully.');
     }
     
-
-
+  
     // public function generateTicket($id)
     // {
     //     $reservation = Reservation::where('user_id', $id)->latest()->first();
 
-
-        
-
     //     return view('tickets.show', compact('reservation'));
     // }
-
 
     // public function showTicket(Reservation $reservation)
     // {
@@ -69,4 +64,5 @@ class ReservationController extends Controller
 
     //     return view('tickets.show', compact('reservation'));
     // }
+    
 }

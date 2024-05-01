@@ -1,4 +1,4 @@
-@include('partials.navbar')
+@include('partials.renternav')
 <body class="bg-gradient-to-r from-yellow-500 to-yellow-800">
   
 <section class="max-w-4xl p-6 mx-auto bg-black rounded-md shadow-md dark:bg-gray-800 mt-20">

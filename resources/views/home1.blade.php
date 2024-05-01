@@ -128,7 +128,7 @@
             <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
               <button type="button" class="relative block w-full bg-black rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 <span class="sr-only">Watch our video to learn more</span>
-                <img class="w-full" src="./images/carbg.webp" alt="">
+                <img class="w-full" src="./images/carbg3.jpeg" alt="">
                 <div class="absolute inset-0 w-full h-full flex items-center justify-center" aria-hidden="true">
                   <svg class="h-20 w-20 text-indigo-500" fill="currentColor" viewBox="0 0 84 84">
                     <circle opacity="0.9" cx="42" cy="42" r="42" fill="white"></circle>
@@ -356,14 +356,14 @@
             </section>
   <!-- <hr class="my-6 border-[#023e8a] md:my-8 dark:border-[#023e8a] border-8" /> -->
 
-<footer class="bg-white font-sans dark:bg-gray-900 ">
+<footer class="bg-black font-sans dark:bg-white ">
     <div class="container px-6 py-12 mx-auto">
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
             <div class="sm:col-span-2">
-                <h1 class="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl dark:text-white">Subscribe our newsletter to get an update.</h1>
+                <h1 class="max-w-lg text-xl font-semibold tracking-tight text-white xl:text-2xl dark:text-white">Subscribe our newsletter to get an update.</h1>
 
                 <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
-                    <input id="email" type="text" class="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-yellow-400 dark:focus:border-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-yellow-300" placeholder="Email Address" />
+                    <input id="email" type="text" class="px-4 py-2 text-white bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-yellow-400 dark:focus:border-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-yellow-300" placeholder="Email Address" />
             
                     <button class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
                         Subscribe
@@ -372,22 +372,22 @@
             </div>
 
             <div>
-                <p class="font-semibold text-gray-800 dark:text-white">Quick Link</p>
+                <p class="font-semibold text-white dark:text-white">Quick Link</p>
 
                 <div class="flex flex-col items-start mt-5 space-y-2">
-                    <p class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Home</p>
-                    <p class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Who We Are</p>
-                    <p class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Our Philosophy</p>
+                    <p class="text-white transition-colors duration-300 dark:text-white dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Home</p>
+                    <p class="text-white transition-colors duration-300 dark:text-white dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Who We Are</p>
+                    <p class="text-white transition-colors duration-300 dark:text-white dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Our Philosophy</p>
                 </div>
             </div>
 
             <div>
-                <p class="font-semibold text-gray-800 dark:text-white">Industries</p>
+                <p class="font-semibold text-white dark:text-white">Industries</p>
 
                 <div class="flex flex-col items-start mt-5 space-y-2">
-                    <p class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Retail & E-Commerce</p>
-                    <p class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Information Technology</p>
-                    <p class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Finance & Insurance</p>
+                    <p class="text-white transition-colors duration-300 dark:text-white dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Retail & E-Commerce</p>
+                    <p class="text-white transition-colors duration-300 dark:text-white dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Information Technology</p>
+                    <p class="text-white transition-colors duration-300 dark:text-white dark:hover:text-yellow-400 hover:underline hover:cursor-pointer hover:text-yellow-500">Finance & Insurance</p>
                 </div>
             </div>
         </div>

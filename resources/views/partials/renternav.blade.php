@@ -38,9 +38,8 @@
        
         </div>
         {{-- {{route('home')}} --}} 
-        <a href="{{route('home')}}" class="text-sm font-semibold leading-6 text-yellow-900">home</a>
-        <a href="" class="text-sm font-semibold leading-6 text-yellow-900">about us</a>
-         <a href="" class="text-sm font-semibold leading-6 text-yellow-900">company</a>
+        <a href="{{route('landlord.dashboard')}}" class="text-sm font-semibold leading-6 text-yellow-900">home</a>
+        <a href="{{route('addAnnonce')}}" class="text-sm font-semibold leading-6 text-yellow-900">create an annonce</a>
       </div>
       
       
