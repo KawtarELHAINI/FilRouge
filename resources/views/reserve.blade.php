@@ -1,22 +1,24 @@
 @extends('layout')
 @include('partials.navbar')
-<body class="bg-gray-100">
+<body >
+<div class="bg-gradient-to-r from-yellow-400 to-yellow-600">
+
 <div class="container mx-auto py-12">
     <form id="reservationForm" action="{{ route('annonces.reserve', $annonce->id) }}" method="post" class="max-w-lg mx-auto bg-white p-8 rounded shadow-md">
         @csrf
         <div class="mb-6">
             <div class="form-group">
                 <label for="start_date" class="block text-gray-700 font-bold mb-2">Start Date:</label>
-                <input type="date" id="start_date" name="start_date" class="form-control" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required>
+                <input type="date" id="start_date" name="start_date" class="form-control" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-500" required>
             </div>
         </div>  
         <div class="mb-6">
             <div class="form-group">
                 <label for="end_date" class="block text-gray-700 font-bold mb-2">End Date:</label>
-                <input type="date" id="end_date" name="end_date" class="form-control" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" required>
+                <input type="date" id="end_date" name="end_date" class="form-control" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-yellow-500" required>
             </div>
         </div>
-        <button type="submit" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Reserve</button>
+        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Reserve</button>
         <!-- <div id="successMessage" class="hidden mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded-md"></div> -->
         <div id="errorMessage" class="hidden mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded-md"></div>
     </form>
@@ -51,4 +53,8 @@ function updateEndTimeMin() {
     </script>
 </body>
 </html>
+
+
+
+@include('partials.footer')
      

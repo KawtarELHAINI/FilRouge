@@ -38,6 +38,8 @@ Route::get('/register', function () {
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'show'])->name('logins');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // Route::resource('categories', CategoryController::class);
 
 
@@ -148,7 +150,7 @@ Route::get('/admin/test' , function()
         Route::get('/Allannonces', [AnnonceController::class, 'viewAll'])->name('viewAll');
         Route::delete('/Allannonces/{annonce}', [AnnonceController::class, 'delete'])->name('deleteAd');
         // Route::get('/annonces', [UserController::class, 'stats'])->name('stats');
-        Route::get('/annonces/{id}/reserve', [AnnonceController::class, 'showReserveForm'])->name('annonces.reserveForm');
+        // Route::get('/annonces/{id}/reserve', [AnnonceController::class, 'showReserveForm'])->name('annonces.reserveForm');
         Route::post('/annonces/{id}/reserve', [ReservationController::class, 'reserve'])->name('annonces.reserve');
         
             // Route::post('/annonces/reserve/{annonce}', [ReservationController::class, 'reserve'])->name('annonces.reserve');
