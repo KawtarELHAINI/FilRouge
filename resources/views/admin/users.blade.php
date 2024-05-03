@@ -69,14 +69,14 @@
                             </thead>
                             <tbody class="bg-white divide-y divide-yellow-200" id="users-container">
                                 @foreach ($users as $user)
-                                @if ($user->banned)
+                                @if ($user->trashed())
         <tr>
         <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
         <div>        
-        <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="{{asset('images/' . $user->image) }}" alt="">
+        <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="{{ asset($user->image) }}" alt="">
         </div>
         </td>
-        <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">{{$user->firstname}}{{$user->lastname}}</td>
+        <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">{{$user->name}}</td>
         <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">{{$user->email}}</td>
         <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
         <div class="text-sm text-yellow-500 bg-yellow-500/20 w-fit px-4 py-1 rounded-2xl">{{$user->role}}</div>
@@ -85,22 +85,19 @@
         @if($user->role != 'admin')
 
         <td class="flex  gap-2 px-4 py-4 text-sm whitespace-nowrap text-center">
-        <form action="{{ route('unban.user', ['userId' => $user->id]) }}" method="POST">
-        @csrf
-          @method('PUT')
-          <button type="submit" class="mt-1 text-xs leading-5 text-red-500">Banned</button>
-
-                                                </form>
+        
+        <button type="submit" class="mt-1 text-xs leading-5 text-red-500"><a href="{{route('admin.users.acti',['id'=>$user->id])}}">Remove Block</a></button>
+                                                
                                                 @endif
                                             </td>
-      @else
+        @else
     </tr>
     
     <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
                                                 <div>        <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="{{ asset($user->image) }}" alt="">
 </div>
                                             </td>
-        <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">{{$user->firstname}}{{$user->lastname}}</td>
+                                            <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">{{$user->name}}</td>
         <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">{{$user->email}}</td>
         <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
         <div class="text-sm text-yellow-500 bg-yellow-500/20 w-fit px-4 py-1 rounded-2xl">{{$user->role}}</div>
@@ -109,16 +106,84 @@
         @if($user->role != 'admin')
 
         <td class="flex  gap-2 px-4 py-4 text-sm whitespace-nowrap text-center">
-                                                <form action="{{ route('ban.user', ['userId' => $user->id]) }}" method="POST">
-                                                @csrf
-          @method('PUT')
-          <button type="submit" class="text-sm text-yellow-500 bg-green-500/20 w-fit px-4 py-1 rounded-2xl">unBanned</button>
+                                                
+          <button type="submit" class="text-sm text-yellow-500 bg-green-500/20 w-fit px-4 py-1 rounded-2xl"><button class="btn btn-success"><a href="{{route('admin.users.desa',['id'=>$user->id])}}">Bloquer</a></button>
 
-                                                </form>
                                                 @endif
                                             </td>                 
   @endif
-@endforeach
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+""  @endforeach
 
 
                                         </tbody>

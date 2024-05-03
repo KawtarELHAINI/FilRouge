@@ -22,39 +22,6 @@
   <main >
    
 
-<!--    
-      <dl class="grid grid-cols-2 gap-x-8 gap-y-16 lg:grid-cols-3 md:grid-cols-1 ml-72 mt-32 mb-20">
-       
-        <div class="container mx-auto">
-          <div class="w-72 bg-white max-w-xs mx-auto rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-100 cursor-pointer">
-            <div class="h-20 bg-purple-400 flex items-center justify-between">
-              <p class="mr-0 text-white text-lg pl-5">Advertisements</p>
-            </div>
-            <div class="flex justify-between pt-6 px-5 mb-2 text-sm text-gray-600">
-              <p>TOTAL</p>
-            </div>
-            <p class="py-4 text-3xl ml-5">{{$totalAnnonce}}</p>
-        
-             <hr > -->
-          <!-- </div>
-        </div>
-      
-        <div class="container mx-auto">
-          <div class="w-72 bg-white max-w-xs mx-auto rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 transform hover:scale-100 cursor-pointer">
-            <div class="h-20 bg-red-400 flex items-center justify-between">
-              <p class="mr-0 text-white text-lg pl-5">Categories</p>
-            </div>
-            <div class="flex justify-between pt-6 px-5 mb-2 text-sm text-gray-600">
-              <p>TOTAL</p>
-            </div>
-            <p class="py-4 text-3xl ml-5">{{$categories}}</p>
-             <hr > -->
-          <!-- </div>
-        </div>
-    
-      </dl>  --> 
-      
-
 
 
       <form id="search-form" class="max-w-md mx-auto shadow-xl" action="{{route('viewAll')}}" method="GET"> 
@@ -104,6 +71,16 @@
                         <p class="text-m text-nowrap text-ellipsis	overflow-hidden mb-2 text-gray-400">
                          {{$annonce->price}}
                         </p>
+                    </div>
+                    <div>
+                    @if ($annonce->deleted_at == null)
+
+                    <button ><a href="{{route('admin.annonceref',['id'=>$annonce['id']])}}">Archiver L'annonce</a></button>
+                    @else
+                    
+                    <button ><a href="{{route('admin.annonceacc',['id'=>$annonce['id']])}}">desarchiver L'annonce</a></button>
+                    @endif
+
                     </div>
                    
                 </div>

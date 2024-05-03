@@ -17,8 +17,9 @@ return new class extends Migration
             $table->foreignId('categories_id');
             $table->string('image');
             $table->string('description');
-            $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
             $table->decimal('price');
+            // $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
+            $table->softDeletes();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         }); 

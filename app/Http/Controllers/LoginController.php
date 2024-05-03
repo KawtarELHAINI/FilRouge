@@ -33,11 +33,11 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             if ($user->role === 'client') {
-                return redirect('/welcome');
+                return redirect('/home');
             } elseif ($user->role === 'renter') {
-                return redirect('/create');
+                return redirect('/dashboard');
             } elseif ($user->role === 'admin') {
-                return redirect('/admin/statistiques');
+                return redirect('/statistique');
             } else {
                 auth()->logout();
                 return redirect('/login')->with('error', 'Invalid role');

@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function viewUsers()
     {
-        $users = User::all();
+        $users = User::withTrashed()->get();
         return view('admin.users', compact('users'));
     }
 
@@ -20,7 +20,7 @@ class UserController extends Controller
         $searchTerm = $request->input('search');
 
 
-        $users = User::where('firstname', 'like', '%' . $searchTerm . '%')->get();
+        $users = User::where('name', 'like', '%' . $searchTerm . '%')->get();
 
 
         return view('admin.users', compact('users'));

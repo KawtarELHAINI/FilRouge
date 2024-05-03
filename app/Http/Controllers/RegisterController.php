@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use App\Repositories\UserRepositoryInterface;
+use Illuminate\Validation\Rule;
 
 class RegisterController extends Controller
 {
@@ -17,10 +18,18 @@ class RegisterController extends Controller
         $this->userRepository = $userRepository;
     }
 
-    public function store(RegisterRequest $request)
+    public function store(Request $request)
     {
-        $incomingFields = $request->validated();
+        $incomingFields = $request->validate([
+            'name' => ['required', 'min:3', 'max:10', Rule::unique('users', 'name')],
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'password' => ['required', 'min:8', 'max:200', 'confirmed'],
+            'image' => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'phone' => ['required', 'numeric'],
+            'role' => ['required', Rule::in(['client', 'renter', 'admin'])],
+        ]);
         
+        // dd($incomingFields);
         $incomingFields['password'] = bcrypt($incomingFields['password']);
         
         if ($request->hasFile('image')) {

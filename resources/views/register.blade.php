@@ -3,38 +3,23 @@
    @extends('layouts.master')
 
 @section('content')
-    {{-- <div class="flex h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('images/image1.jpg');"> --}}
-        {{-- <div class="w-full flex items-center justify-center"> --}}
-            {{-- <div class="max-w-2xl m-auto bg-slate-100 rounded p-5 w-4/5 text-white">  --}}
+
                 
 <div class="min-h-screen  flex justify-center items-center bg-black">
   
     <div class="py-12 px-12 bg-yellow-400 rounded-2xl shadow-xl z-20">
     
         <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer bg-yellow-400">Create An Account</h1>
-        @if ($errors->any())
-            <div class="bg-red-500 text-white p-4 mb-4 rounded-md">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        <form action="/register" method="POST" enctype="multipart/form-data">
+      
+        <form action="" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="flex mb-6">
-                <div class="w-1/3 pr-2">
-                    <label class="block mb-2 text-[#0037AE]" for="firstname">FirstName</label>
-                    <input id="firstname"
-                        class="block text-sm py-3 px-4 rounded-lg w-full border outline-yellow-500"
-                        type="text" name="firstname" value="{{old('firstname')}}">
-                </div>
+               
                 <div class="w-1/3 px-2">
-                    <label class="block mb-2 text-[#0037AE]" for="lastname">LastName</label>
-                    <input id="lastname"
+                    <label class="block mb-2 text-[#0037AE]" for="name">Name</label>
+                    <input id="name"
                         class="block text-sm py-3 px-4 rounded-lg w-full border outline-yellow-500"
-                        type="text" name="lastname" value="{{old('lastname')}}">
+                        type="text" name="name" value="{{old('name')}}">
                 </div>
                 <div class="w-1/3 pl-2">
                     <label class="block mb-2 text-[#0037AE]" for="email">Email</label>

@@ -36,9 +36,12 @@ Route::get('/register', function () {
     return view('register');
 });
 Route::post('/register', [RegisterController::class, 'store']);
+// Route::post('/register', function(){
+//     return "test";
+// });
 Route::get('/login', [LoginController::class, 'show'])->name('logins');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route::resource('categories', CategoryController::class);
 
@@ -158,7 +161,12 @@ Route::get('/admin/test' , function()
             // Route::post('/showticket/{event}', [ReservationController::class, 'showTicket'])->name('showticket');
             
             
-            
+        Route::get('/admin_annonce_ref/{id}', [AdminController::class, 'ArchiverAnnonce'])->name('admin.annonceref');
+        Route::get('/admin_annonce_acc/{id}', [AdminController::class, 'dearchiverAnnonce'])->name('admin.annonceacc');
+
+        Route::get('/admin_users_desactivate/{id}', [AdminController::class, 'desactivateUser'])->name('admin.users.desa');
+        Route::get('/admin_users_activate/{id}', [AdminController::class, 'activateUser'])->name('admin.users.acti');
+
 // Route::get('/utilisateur.index' , function()
 // {
 //     return view('utilisateur.index');

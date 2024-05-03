@@ -76,7 +76,7 @@ class AnnonceController extends Controller
         if ($search) {
             $annoncesQuery->where('title', 'like', "%$search%");
         }
-        $annonces = $annoncesQuery->paginate(9);
+        $annonces = $annoncesQuery->withTrashed()->paginate(9);
 
 
         // if ($request->ajax()) {

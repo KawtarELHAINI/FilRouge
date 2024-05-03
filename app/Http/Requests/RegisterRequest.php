@@ -23,8 +23,8 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'firstname' => ['required', 'min:3', 'max:10', Rule::unique('users', 'firstname')],
-            'lastname' => ['required', 'min:3', 'max:10', Rule::unique('users', 'lastname')],
+        
+            'name' => ['required', 'min:3', 'max:10', Rule::unique('users', 'name')],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => ['required', 'min:8', 'max:200', 'confirmed'],
             'image' => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
@@ -36,15 +36,12 @@ class RegisterRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'firstname.required' => 'The firstname field is required.',
-            'firstname.min' => 'The firstname must be at least :min characters.',
-            'firstname.max' => 'The firstname may not be greater than :max characters.',
-            'firstname.unique' => 'The firstname has already been taken.',
             
-            'lastname.required' => 'The lastname field is required.',
-            'lastname.min' => 'The lastname must be at least :min characters.',
-            'lastname.max' => 'The lastname may not be greater than :max characters.',
-            'lastname.unique' => 'The lastname has already been taken.',
+            
+            'name.required' => 'The name field is required.',
+            'name.min' => 'The name must be at least :min characters.',
+            'name.max' => 'The name may not be greater than :max characters.',
+            'name.unique' => 'The name has already been taken.',
             
             'email.required' => 'The email field is required.',
             'email.email' => 'The email must be a valid email address.',
