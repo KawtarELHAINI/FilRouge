@@ -53,7 +53,8 @@
      
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         
-        <a href="" class="rounded-md bg-red-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">log out</a>
+      <a  href="{{route('logout')}}"
+ class="rounded-md bg-red-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">log out</a>
     </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->

@@ -129,7 +129,7 @@
                 <i class="fa-solid fa-hand text-[40px]"></i>
 
             </span>
-            <h4 class="text-bold text-2xl">Reservation</h4>
+            <h4 class="text-bold text-2xl">Categories</h4>
         </div>
         <div class="mt-5">
             <span class="text-4xl">
@@ -159,4 +159,4 @@
 </main>
 
   </body>
-  </html>y
+  </html>

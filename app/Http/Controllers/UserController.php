@@ -5,11 +5,13 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Annonce;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function viewUsers()
     {
+        // dd(Auth::user()->id);
         $users = User::withTrashed()->get();
         return view('admin.users', compact('users'));
     }
