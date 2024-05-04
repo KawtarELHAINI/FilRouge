@@ -75,10 +75,16 @@
                     <div>
                     @if ($annonce->deleted_at == null)
 
-                    <button ><a href="{{route('admin.annonceref',['id'=>$annonce['id']])}}">Archiver L'annonce</a></button>
+                    <button ><a href="{{route('admin.annonceref',['id'=>$annonce['id']])}}"><svg class="w-6 h-6 text-gray-800 dark:text-gray-500" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                            <path stroke="currentColor" stroke-linejoin="round" stroke-width="2"
+                                d="M8 8v1h4V8m4 7H4a1 1 0 0 1-1-1V5h14v9a1 1 0 0 1-1 1ZM2 1h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Z" />
+                        </svg></a></button>
                     @else
                     
-                    <button ><a href="{{route('admin.annonceacc',['id'=>$annonce['id']])}}">desarchiver L'annonce</a></button>
+                    <button ><a href="{{route('admin.annonceacc',['id'=>$annonce['id']])}}">  <svg class="w-6 h-6 text-gray-800 dark:text-gray" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 14">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m12 7 3-3-3-3m0 12H5.5a4.5 4.5 0 1 1 0-9H14"/>
+                                                    </svg></a></button>
                     @endif
 
                     </div>

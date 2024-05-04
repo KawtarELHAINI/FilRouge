@@ -91,13 +91,7 @@ Route::middleware('auth', 'renter')->group(function (){
 
 
 Route::middleware('auth')->group(function (){
-    // Route::get('/home', [AnnonceController::class, 'viewClient'])->name('home');
-    // Route::get('/', [AnnonceController::class, 'viewvisiteur'])->name('home1');
-
   
-
-       
-       
         Route::put('/ban/user/{userId}',  [UserController::class, 'banUser'])->name('ban.user');
         Route::put('/Unban/user/{userId}',  [UserController::class, 'unbanUser'])->name('unban.user');
         Route::delete('/Allannonces/{annonce}', [AnnonceController::class, 'delete'])->name('deleteAd');

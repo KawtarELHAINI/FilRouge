@@ -55,7 +55,7 @@
                 </form>
 
                 <hr class="my-6 border-gray-300 w-full">
-                <p class="mt-8">You don't have an account? <a href=""
+                <p class="mt-8">You don't have an account? <a href="/register"
                         class="text- hover:text font-semibold">REGISTER Or </a></p>
                          <a href="/" class="text- hover:text font-semibold">GO BACK</a>
             </div>
