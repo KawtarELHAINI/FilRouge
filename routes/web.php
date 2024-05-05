@@ -19,7 +19,6 @@ use App\Http\Controllers\ReservationController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::middleware('guest')->group(function (){
     Route::get('/', function () {
         return view('home1');
     });
@@ -35,7 +34,7 @@ Route::middleware('guest')->group(function (){
 
     Route::get('/login', [LoginController::class, 'show'])->name('logins');
     Route::post('/login', [LoginController::class, 'login'])->name('login');
-});
+
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
