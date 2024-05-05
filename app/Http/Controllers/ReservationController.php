@@ -16,21 +16,23 @@ class ReservationController extends Controller
 
     public function reserve(Request $request, $id)
     {
-        $request->validate([
-            'start_date' => 'required|date',
-            'end_date' => 'required|date|after:start_date',
-        ]);
-    
         $user_id = Auth::user()->id;
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
     
-        // $annonce = Annonce::findOrFail($id);
-    
-        // Check if the annonce is available for reservation
+        // Check if there is any overlapping reservation for the given announcement and dates
         $existingReservation = Reservation::where('annonce_id', $id)
-            ->where(function ($query) use ($request) {
-                $query->whereBetween('start_date', [$request->start_date, $request->end_date])
-                    ->orWhereBetween('end_date', [$request->start_date, $request->end_date]);
-            })->exists();
+            ->where(function ($query) use ($start_date, $end_date) {
+                $query->where(function ($query) use ($start_date, $end_date) {
+                    $query->whereBetween('start_date', [$start_date, $end_date])
+                        ->orWhereBetween('end_date', [$start_date, $end_date]);
+                })
+                ->orWhere(function ($query) use ($start_date, $end_date) {
+                    $query->where('start_date', '<=', $start_date)
+                        ->where('end_date', '>=', $end_date);
+                });
+            })
+            ->exists();
     
         if ($existingReservation) {
             return redirect()->back()->with('error', 'This annonce is already reserved for the selected dates.');
@@ -40,12 +42,14 @@ class ReservationController extends Controller
         Reservation::create([
             'user_id' => $user_id,
             'annonce_id' => $id,
-            'start_date' => $request->start_date,
-            'end_date' => $request->end_date,
+            'start_date' => $start_date,
+            'end_date' => $end_date,
         ]);
     
         return redirect()->back()->with('success', 'Reservation created successfully.');
     }
+    
+
     
   
     // public function generateTicket($id)

@@ -67,7 +67,7 @@ Route::middleware('auth', 'client')->group(function (){
     Route::get('/details/{id}', [AnnonceController::class, 'showDetails'])->name('details');
     Route::get('/annonces/{id}/reserve', [AnnonceController::class, 'showReserveForm'])->name('annonces.reserveForm');
     Route::post('/annonces/{id}/reserve', [ReservationController::class, 'reserve'])->name('annonces.reserve');
-
+    
 });
 
 
