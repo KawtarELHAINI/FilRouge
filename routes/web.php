@@ -23,9 +23,8 @@ use App\Http\Controllers\ReservationController;
         return view('home1');
     });
 
-    Route::get('/about', function () {
-        return view('about');
-    });
+    Route::get('/about', [AnnonceController::class, 'viewvisiteur'])->name('about');
+
 
     Route::get('/register', function () {
         return view('register');
@@ -46,7 +45,7 @@ Route::middleware('auth', 'admin')->group(function (){
     Route::delete('/Categories/{category}', [CategoryController::class, 'delete'])->name('deleteCategorie');
     //still not working
     Route::put('/Categorie', [CategoryController::class, 'update'])->name('updateCategorie');
-      
+
     Route::get('/admin_annonce_ref/{id}', [AdminController::class, 'ArchiverAnnonce'])->name('admin.annonceref');
     Route::get('/admin_annonce_acc/{id}', [AdminController::class, 'dearchiverAnnonce'])->name('admin.annonceacc');
 
@@ -66,7 +65,8 @@ Route::middleware('auth', 'client')->group(function (){
     Route::get('/details/{id}', [AnnonceController::class, 'showDetails'])->name('details');
     Route::get('/annonces/{id}/reserve', [AnnonceController::class, 'showReserveForm'])->name('annonces.reserveForm');
     Route::post('/annonces/{id}/reserve', [ReservationController::class, 'reserve'])->name('annonces.reserve');
-    
+    Route::get('/reservations', [ReservationController::class, 'reservations'])->name('reservations');
+
 });
 
 
@@ -90,11 +90,9 @@ Route::middleware('auth', 'renter')->group(function (){
 
 
 Route::middleware('auth')->group(function (){
-  
+
         Route::put('/ban/user/{userId}',  [UserController::class, 'banUser'])->name('ban.user');
         Route::put('/Unban/user/{userId}',  [UserController::class, 'unbanUser'])->name('unban.user');
         Route::delete('/Allannonces/{annonce}', [AnnonceController::class, 'delete'])->name('deleteAd');
-      
+
     });
-
-

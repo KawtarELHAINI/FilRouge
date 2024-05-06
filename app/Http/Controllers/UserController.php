@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Reservation;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Annonce;
@@ -29,15 +30,7 @@ class UserController extends Controller
     }
 
 
-    // public function stats() 
-    // {
-    //     $totalcategories = Category::count();
-    //     $totalannonces = Annonce::count();
-    //     $totalusers = User::count();
-    //     return view('admin.allannonces', compact('totalcategories','totalannonces','totalusers'));
-    // }
-
-
+   
   
 
         public function banUser($userId)
@@ -79,13 +72,13 @@ class UserController extends Controller
 
     public function statistics()
     {
-        $usersCount = User::where('role', 'user')->count();
-        $advertisersCount = User::where('role', 'advertiser')->count();
+        $usersCount = User::count();
+        $totalreservations = Reservation::count();
         $totalcategories = Category::count();
        
         $totalAnnonce = Annonce::count();
        
-        return view('admin.statistique', compact('usersCount','advertisersCount', 'totalAnnonce','totalcategories'));
+        return view('admin.statistique', compact('usersCount','totalreservations', 'totalAnnonce','totalcategories'));
     }
 }
 

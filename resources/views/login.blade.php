@@ -21,11 +21,9 @@
         <div class="h-screen flex items-center justify-center ">
 
             <div class="bg-gray-200 py-5 px-8 border-t-4 border-gray-700 rounded-md shadow-lg ">
-                {{-- <img src="images/logo.png" alt="Logo" class="w-16 h-16 ml-4"> --}}
                 <div class="flex items-center">
                 <h2 class="text-3xl text-yellow-800 mb-3"> <strong class="block font-extrabold text-[#f5b754] text-4xl mt-2"> LOGIN </strong>
-                                            <!-- <img src="images/logo.png" alt="Logo" class="w-16 h-16 ml-4"> -->
-                        
+               
                     </div>
                 
 
@@ -48,7 +46,6 @@
                     class="border-none bg-yellow-600 py-2 px-3 text-white roudend-sm w-full mt-2 rounded-md hover:bg-yellow-700 mb-5" 
                     >Log In</button>
 
-                    <!-- Password reset link -->
                     <p class="mt-2 text-sm text hover:text">
                         <a href="">Forgot your password? Reset it here.</a>
                     </p>

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -20,7 +14,6 @@
     </head>
     <body >
 <!-- component -->
-<!-- follow me on twitter @asad_codes -->
 
 <div class="flex flex-wrap place-items-center ">
   <section class="relative mx-auto">
@@ -35,22 +28,23 @@
         <!-- Nav Links -->
         <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
           <li><a class="hover:text-gray-200" href="/">Home</a></li>
-          <li><a class="hover:text-gray-200" href="/about">about</a></li>
+          <li><a class="hover:text-gray-200" href="/about">About</a></li>
           <li><a class="hover:text-gray-200" href="/register">Sign up</a></li>
+          <!-- <li><a class="hover:text-gray-200" href="#">Contact Us</a></li> -->
         </ul>
         <!-- Header Icons -->
         <div class="hidden xl:flex items-center space-x-5 items-center">
         
-        <a class="flex items-center hover:text-gray-200" href="/login">Login
-            
-        </a>
-        <a class="flex items-center hover:text-gray-200" href="/login">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-        </a>
-        
-      </div>
+          <a class="flex items-center hover:text-gray-200" href="/login">Login
+              
+          </a>
+          <a class="flex items-center hover:text-gray-200" href="/login">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+          </a>
+          
+        </div>
       </div>
       <!-- Responsive navbar -->
       <a class="xl:hidden flex mr-6 items-center" href="#">
@@ -72,172 +66,78 @@
     
   </section>
 </div>
-<div class="absolute bottom-0 right-0 mb-4 mr-4 z-10">
-    <div>
-        <a title="Follow me on twitter" href="https://www.twitter.com/asad_codes" target="_blank" class="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
-            <img class="object-cover object-center w-full h-full rounded-full" src="https://www.imore.com/sites/imore.com/files/styles/large/public/field/image/2019/12/twitter-logo.jpg"/>
-        </a>
+<div class="bg-gray-200">
+    
+    <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <h2 class="sr-only">Products</h2>
+
+  
+<form class="flex items-center max-w-lg mx-auto mb-20" method="GET" action="{{ route('home') }}">
+  @csrf   
+  <label for="voice-search" class="sr-only">Search</label>
+  <div class="relative w-full">
+      <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+        
+      </div>
+      <input type="text" id="voice-search" name="search" class="bg-gray-50 border border-gray-300 text-gray-900  shadow-lg text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" placeholder="Search cars..." required />
+     
+
+  </div>
+ 
+  <button type="submit" class="inline-flex items-center py-2.5 px-3 ms-2 shadow-xl text-sm font-medium text-white bg-yellow-700 rounded-lg border border-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+      <svg class="w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+      </svg>Search
+  </button>
+</form>
+
+
+
+
+<form action="{{ route('home') }}" method="GET">
+    @csrf
+    
+    <div class="flex items-center justify-center py-4 md:py-8 flex-wrap">
+        <button type="submit" name="category_id" value="" class="text-yellow-700 hover:text-white border border-yellow-600 bg-white hover:bg-yellow-700 focus:ring-4 focus:outline-none focus:ring-yellow-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-yellow-500 dark:text-yellow-500 dark:hover:text-white dark:hover:bg-yellow-500 dark:bg-gray-900 dark:focus:ring-yellow-800">All categories</button>
+        @foreach($categories as $category)
+            <button type="submit" name="category_id" value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }} class="text-gray-900 border border-white bg-gray-200 hover:border-gray-200 hover:text-white hover:bg-yellow-400 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">{{ $category->name }}</button>
+        @endforeach
     </div>
-</div>
+
+</form>
 
 
-<section class="bg-gray-50 py-24"> 
-                <div class="container mx-auto px-4"> 
-                    <div class="-mx-4 flex flex-wrap items-center mb-6"> 
-                        <div class="px-4 w-full md:w-10/12"> 
-                            <h2 class="font-medium mb-1 text-yellow-500 text-xl">Our Top Cars</h2>
-                            <h3 class="capitalize font-bold mb-4 text-4xl text-gray-900">Cars for all your needs</h3>
-                            <div class="bg-yellow-500 mb-6 pb-1 w-2/12"></div>                             
-                        </div>                         
-                    </div>
-                    <div class="-mx-3 flex flex-wrap justify-center mb-12"> 
-                        <div class="p-3 w-full md:w-6/12 lg:w-4/12"> 
-                            <div class="bg-white border shadow-md text-gray-500"> 
-                                <a href="#"><img src="https://images.unsplash.com/photo-1575090536203-2a6193126514?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDN8fGh5dW5kYWl8ZW58MHx8fHwxNjMxNjk3ODI1&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=600&h=450&fit=crop" class="hover:opacity-90 w-full" alt="..." width="600" height="450"/></a>
-                                <div class="p-6">
-                                    <h4 class="font-bold mb-2 text-gray-900 text-xl"><a href="#" class="hover:text-gray-500">Hyundai Creta 2017</a></h4>
-                                    <p class="mb-2 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <hr class="border-gray-200 my-4">
-                                    <div class="flex items-center justify-between">
-                                        <div class="inline-flex items-center py-1 space-x-1">
-                                            <span>4.7</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.125em" height="1.125em" class="text-yellow-500">
-                                                <g>
-                                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                                    <path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z"></path>
-                                                </g>
-                                            </svg>
-                                            <span>(245 reviews)</span>
-                                        </div>
-                                        <p class="font-bold text-gray-900">$40/day</p>
-                                    </div>
-                                </div>                                 
-                            </div>                             
-                        </div>
-                        <div class="p-3 w-full md:w-6/12 lg:w-4/12"> 
-                            <div class="bg-white border shadow-md text-gray-500"> 
-                                <a href="#"><img src="https://images.unsplash.com/photo-1619976215249-0b68cef412b0?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDE2fHxob25kYXxlbnwwfHx8fDE2MzE2OTcxODY&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=600&h=450&fit=crop" class="hover:opacity-90 w-full" alt="..." width="600" height="450"/></a>
-                                <div class="p-6">
-                                    <h4 class="font-bold mb-2 text-gray-900 text-xl"><a href="#" class="hover:text-gray-500">Honda Accord 2018</a></h4>
-                                    <p class="mb-2 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <hr class="border-gray-200 my-4">
-                                    <div class="flex items-center justify-between">
-                                        <div class="inline-flex items-center py-1 space-x-1">
-                                            <span>4.4</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.125em" height="1.125em" class="text-yellow-500">
-                                                <g>
-                                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                                    <path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z"></path>
-                                                </g>
-                                            </svg>
-                                            <span>(654 reviews)</span>
-                                        </div>
-                                        <p class="font-bold text-gray-900">$65/day</p>
-                                    </div>
-                                </div>                                 
-                            </div>                             
-                        </div>
-                        <div class="p-3 w-full md:w-6/12 lg:w-4/12"> 
-                            <div class="bg-white border shadow-md text-gray-500"> 
-                                <a href="#"><img src="https://images.unsplash.com/photo-1554666869-04dafcdc7a48?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDQxN3x8Y2FyJTIwc3V2fGVufDB8fHx8MTYzMTY4NTkwNg&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=600&h=450&fit=crop" class="hover:opacity-90 w-full" alt="..." width="600" height="450"/></a>
-                                <div class="p-6">
-                                    <h4 class="font-bold mb-2 text-gray-900 text-xl"><a href="#" class="hover:text-gray-500">BMW M3 2010</a></h4>
-                                    <p class="mb-2 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <hr class="border-gray-200 my-4">
-                                    <div class="flex items-center justify-between">
-                                        <div class="inline-flex items-center py-1 space-x-1">
-                                            <span>4.9</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.125em" height="1.125em" class="text-yellow-500">
-                                                <g>
-                                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                                    <path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z"></path>
-                                                </g>
-                                            </svg>
-                                            <span>(546 reviews)</span>
-                                        </div>
-                                        <p class="font-bold text-gray-900">$45/day</p>
-                                    </div>
-                                </div>                                 
-                            </div>                             
-                        </div>
-                        <div class="p-3 w-full md:w-6/12 lg:w-4/12"> 
-                            <div class="bg-white border shadow-md text-gray-500"> 
-                                <a href="#"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDMwfHxzcG9ydHMlMjBjYXJ8ZW58MHx8fHwxNjMxNjg3MzQ4&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=600&h=450&fit=crop" class="hover:opacity-90 w-full" alt="..." width="600" height="450"/></a>
-                                <div class="p-6">
-                                    <h4 class="font-bold mb-2 text-gray-900 text-xl"><a href="#" class="hover:text-gray-500">Chevrolet Equinox 2005</a></h4>
-                                    <p class="mb-2 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <hr class="border-gray-200 my-4">
-                                    <div class="flex items-center justify-between">
-                                        <div class="inline-flex items-center py-1 space-x-1">
-                                            <span>4.2</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.125em" height="1.125em" class="text-yellow-500">
-                                                <g>
-                                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                                    <path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z"></path>
-                                                </g>
-                                            </svg>
-                                            <span>(234 reviews)</span>
-                                        </div>
-                                        <p class="font-bold text-gray-900">$55/day</p>
-                                    </div>
-                                </div>                                 
-                            </div>                             
-                        </div>
-                        <div class="p-3 w-full md:w-6/12 lg:w-4/12"> 
-                            <div class="bg-white border shadow-md text-gray-500"> 
-                                <a href="#"><img src="https://images.unsplash.com/photo-1546768292-fb12f6c92568?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDk5fHxjYXIlMjBjb252ZXJ0aWJsZXxlbnwwfHx8fDE2MzE2ODUxMzA&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=600&h=450&fit=crop" class="hover:opacity-90 w-full" alt="..." width="600" height="450"/></a>
-                                <div class="p-6">
-                                    <h4 class="font-bold mb-2 text-gray-900 text-xl"><a href="#" class="hover:text-gray-500">Ferrari 458 Spider 2015</a></h4>
-                                    <p class="mb-2 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <hr class="border-gray-200 my-4">
-                                    <div class="flex items-center justify-between">
-                                        <div class="inline-flex items-center py-1 space-x-1">
-                                            <span>4.7</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.125em" height="1.125em" class="text-yellow-500">
-                                                <g>
-                                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                                    <path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z"></path>
-                                                </g>
-                                            </svg>
-                                            <span>(346 reviews)</span>
-                                        </div>
-                                        <p class="font-bold text-gray-900">$75/day</p>
-                                    </div>
-                                </div>                                 
-                            </div>                             
-                        </div>
-                        <div class="p-3 w-full md:w-6/12 lg:w-4/12"> 
-                            <div class="bg-white border shadow-md text-gray-500"> 
-                                <a href="#"><img src="https://images.unsplash.com/photo-1625231334168-35067f8853ed?ixid=MnwyMDkyMnwwfDF8c2VhcmNofDU2fHxzcG9ydHMlMjBjYXJ8ZW58MHx8fHwxNjMxNjg3OTY1&ixlib=rb-1.2.1q=85&fm=jpg&crop=faces&cs=srgb&w=600&h=450&fit=crop" class="hover:opacity-90 w-full" alt="..." width="600" height="450"/></a>
-                                <div class="p-6">
-                                    <h4 class="font-bold mb-2 text-gray-900 text-xl"><a href="#" class="hover:text-gray-500">Ford Mustang Shelby 2017</a></h4>
-                                    <p class="mb-2 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <hr class="border-gray-200 my-4">
-                                    <div class="flex items-center justify-between">
-                                        <div class="inline-flex items-center py-1 space-x-1">
-                                            <span>4.5</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.125em" height="1.125em" class="text-yellow-500">
-                                                <g>
-                                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                                    <path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z"></path>
-                                                </g>
-                                            </svg>
-                                            <span>(587 reviews)</span>
-                                        </div>
-                                        <p class="font-bold text-gray-900">$90/day</p>
-                                    </div>
-                                </div>                                 
-                            </div>                             
-                        </div>                         
-                    </div>
-                    <div class="text-center">
-                        <a href="/login" class="bg-yellow-500 hover:bg-yellow-600 inline-block px-6 py-2 text-white">View All Cars</a>
-                    </div>
-                </div>                 
-            </section>
-
+  
+      <div class="grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+      
+    
+    @foreach ($annonces as $annonce)
+    
+        <div class="max-w-sm bg-black border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        
+              <a href="#">
+                <img class="rounded-t-lg object-fill h-48 w-full" src="{{asset('images/' . $annonce->image) }}" alt="Tall slender porcelain bottle with natural clay textured body and cork stopper." />
+            </a>
+          <div class="p-5">
+              <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white== pb-5">{{ $annonce->title }}</h5>
+              </a>
             
-<footer class="bg-black font-sans dark:bg-white ">
+              <div class="grid grid-cols-1 gap-2">
+              <p class="mb-3 font-normal text-white dark:text-white  rounded drop-shadow-md px-5 py-0.5 ">Price : {{ $annonce->price }}</p>
+              <p class="mb-3 font-normal text-white dark:text-white rounded drop-shadow-md px-5 py-0.5">contact : 0645982736</p>
+              <p class="mb-3 font-normal text-white dark:text-white  px-5 py-0.5">April 14</p>
+              </div>
+             
+            
+          </div>
+      </div>  
+        @endforeach
+ 
+      </div>
+    </div>
+  </div>
+  <footer class="bg-black font-sans dark:bg-white ">
     <div class="container px-6 py-12 mx-auto">
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
             <div class="sm:col-span-2">
@@ -294,3 +194,10 @@
         <p class="font-sans p-8 text-start md:text-center md:text-lg md:p-4">© 2024 AutoKaw.</p>
     </div>
 </footer>
+  
+
+
+  
+  
+
+  

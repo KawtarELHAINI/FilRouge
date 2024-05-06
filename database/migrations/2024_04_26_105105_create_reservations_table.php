@@ -1,4 +1,4 @@
-<?php
+hada table dyal migration <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,9 +18,10 @@ return new class extends Migration
             $table->foreignId('annonce_id')->constrained('annonce');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
+            $table->bigInteger('barCode');
             $table->timestamps();
         });
-        
+
     }
 
     /**

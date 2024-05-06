@@ -5,7 +5,6 @@
 <section class="max-w-4xl p-6 mx-auto bg-black rounded-md shadow-md dark:bg-gray-800 mt-20">
     <h1 class="text-xl font-bold text-white capitalize dark:text-white">Update Annonce</h1>
 
-    {{-- <h1 class="ml-72 mt-20 text-2xl text-gray-900 dark:text-white">Update -></h1> --}}
 
 <form action="{{ route('annonces.update', $annonce->id) }}" method="POST" enctype="multipart/form-data" class="max-w-sm mx-auto mt-20">
     @csrf

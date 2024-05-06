@@ -11,32 +11,7 @@ class AnnonceController extends Controller
 {
    
 
-    // public function viewvisiteur(Request $request)
-    // {
-    //     $categories = Category::all();
-    
-      
-    //     $search = $request->input('search');
-    //     $categoryId = $request->input('category_id');
-    
-      
-    //     $annoncesQuery = Annonce::orderby('created_at', 'desc');
-    //     if ($search) {
-    //         $annoncesQuery->where('title', 'like', "%$search%");
-    //     }
-    //     if ($categoryId) {
-    //         $annoncesQuery->where('categories_id', $categoryId);
-    //     }
-    //     if ($request->ajax()) {
-    //         return view('home1', compact('annonces'));
-    //     }
-       
-    //     $annonces = $annoncesQuery->get();
-    
-    //     return view('home1', compact('annonces', 'categories'));
-    // }
-    
-    public function viewClient(Request $request)
+    public function viewvisiteur(Request $request)
     {
         $categories = Category::all();
     
@@ -53,10 +28,35 @@ class AnnonceController extends Controller
             $annoncesQuery->where('categories_id', $categoryId);
         }
         if ($request->ajax()) {
-            return view('home', compact('annonces'));
+            return view('about', compact('annonces'));
         }
        
         $annonces = $annoncesQuery->get();
+    
+        return view('about', compact('annonces', 'categories'));
+    }
+    
+    public function viewClient(Request $request)
+    {
+        $categories = Category::all();
+    
+      
+        $search = $request->input('search');
+        $categoryId = $request->input('category_id');
+      
+        $annoncesQuery = Annonce::orderby('created_at', 'desc');
+        if ($search) {
+            $annoncesQuery->where('title', 'like', "%$search%");
+        }
+        if ($categoryId) {
+            $annoncesQuery->where('categories_id', $categoryId);
+        }
+        
+        $annonces = $annoncesQuery->get();
+        
+        if ($request->ajax()) {
+            return $annonces;
+        }
     
         return view('home', compact('annonces', 'categories'));
     }

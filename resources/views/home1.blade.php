@@ -4,16 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>AutoKaw</title>
 
-        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <script src="https://cdn.tailwindcss.com"></script>
 
     </head>
     <body >
-<!-- component -->
 
 <div class="flex flex-wrap place-items-center ">
   <section class="relative mx-auto">
@@ -25,15 +23,12 @@
                             alt="" width="100" height="100">
                     
                         </a>
-        <!-- Nav Links -->
-        <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
+=        <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
           <li><a class="hover:text-gray-200" href="/">Home</a></li>
           <li><a class="hover:text-gray-200" href="/about">About</a></li>
           <li><a class="hover:text-gray-200" href="/register">Sign up</a></li>
-          <!-- <li><a class="hover:text-gray-200" href="#">Contact Us</a></li> -->
-        </ul>
-        <!-- Header Icons -->
-        <div class="hidden xl:flex items-center space-x-5 items-center">
+=        </ul>
+$        <div class="hidden xl:flex items-center space-x-5 items-center">
         
           <a class="flex items-center hover:text-gray-200" href="/login">Login
               

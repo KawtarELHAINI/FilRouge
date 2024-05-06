@@ -1,10 +1,7 @@
 @include('partials.renternav')
 
 <body class="bg-gradient-to-r from-yellow-600 to-yellow-200">
-    {{-- <div class="relative overflow-hidden min-h-screen ">
-    <img src="{{ asset('images/pexels-anni-roenkae-2156881.jpg') }}" alt="" class="absolute inset-0 -z-10 h-screen  w-full object-cover object-right bg-cover  md:object-center">
-    --}}
-
+  
 
 
         <form class="max-w-md mx-auto mt-10 shadow-xl mb-20" action="{{ route('landlord.dashboard') }}" method="GET">
@@ -31,7 +28,6 @@
 
 
 
-    <!-- <div class="grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"> -->
 
     <div class="grid grid-cols-1 gap-x-4 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ml-72">
 
@@ -58,9 +54,7 @@
                             contact : 0645982736</p>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400  px-5 py-0.5">April 14</p>
                     </div>
-                    {{-- <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-                    update
-                  </button> --}}
+                  
 
                     <form class="mt-1 text-xs leading-5 text-red-500" action="{{ route('deleteAd', $annonce->id) }}"
                         method="post">
