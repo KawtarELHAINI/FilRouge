@@ -190,7 +190,6 @@ public function EditAnnoce($id) {
 
     public function update(Request $request, $id)
     {
-        //dd($request);
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
